@@ -35,12 +35,12 @@ done
 echo -ne "email \033[35m>\033[0m "
 read email
 
-docker build -t $username/iojs:1.2.0 .
-
 docker login \
   -u="$username" \
   -p="$password" \
   -e="$email"
+
+docker build -t $username/iojs:1.2.0 .
 
 docker push $username/iojs:1.2.0
 
