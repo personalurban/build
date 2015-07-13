@@ -40,7 +40,7 @@ docker login \
   -p="$password" \
   -e="$email"
 
-docker build -t $username/iojs:1.2.0 .
+docker build -t $username/iojs:2.3.4 .
 
-docker push $username/iojs:1.2.0
+docker push $username/iojs:2.3.4
 

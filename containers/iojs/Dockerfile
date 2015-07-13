@@ -1,8 +1,13 @@
-# Base image for dev
-# Could be made skinnier
-FROM dockerfile/ubuntu
+
+FROM ubuntu:15.04
+MAINTAINER Matt Styles <matt@veryfizzyjelly.com>
 
 ENV IOJS_VERSION 2.3.4
+
+# Wget is useful
+RUN apt-get update && \
+    apt-get -y upgrade && \
+    apt-get install -y wget
 
 # Install iojs 2.3.4
 RUN wget https://iojs.org/dist/v$IOJS_VERSION/iojs-v$IOJS_VERSION-linux-x64.tar.gz && \
